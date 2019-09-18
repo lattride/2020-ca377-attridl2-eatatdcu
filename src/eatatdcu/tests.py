@@ -17,4 +17,3 @@ class A0Tests(TestCase):
       """
       response = self.client.get(reverse('eatatdcu:restaurants'))
       self.assertEqual(response.status_code, 200)
-

@@ -6,4 +6,4 @@ def index(request):
    context = {}
    return render(request,'eatatdcu/index.html',context)
 
-# TODO add a restaurants function which loads the restaurants template
+# TODO add a restaurants function which loads the restaurants.html template
