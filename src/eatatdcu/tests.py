@@ -13,7 +13,7 @@ class A0Tests(TestCase):
 
     def test_restaurants(self):
       """
-      The restaurants page loads and an appropriate message is displayed
+      The restaurants page loads 
       """
       response = self.client.get(reverse('eatatdcu:restaurants'))
       self.assertEqual(response.status_code, 200)
