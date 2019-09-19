@@ -1,4 +1,4 @@
-image: "smblott/dcu-docker-gitlab-ci"
+#image: "smblott/dcu-docker-gitlab-ci"
 
 testA0:
  script:
