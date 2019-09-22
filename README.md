@@ -1,3 +1,3 @@
-# 2020-ca377-master-eatatdcu
+# 2020-ca377-test-eatatdcu
 
-Master repository for Fundamentals of Programming III (CA377)
+Personal test repository for Fundamentals of Programming III (CA377)
