@@ -1,0 +1,12 @@
+image: "smblott/dcu-docker-gitlab-ci"
+
+testA0:
+ script:
+    - "django-admin --version"
+    - "echo ok checking submission for A0"
+    - "echo checking for restaurants.html"
+    - "cd src"
+    - "ls eatatdcu/templates/eatatdcu/restaurants.html"
+    - "echo running python django test"
+    - "python3 manage.py test eatatdcu"
+    - "echo finished A0 submission checks"
