@@ -9,4 +9,4 @@ testA0:
     - "ls eatatdcu/templates/eatatdcu/restaurants.html"
     - "echo running python django test"
     - "python3 manage.py test eatatdcu"
-    - "echo finished A1 submission checks"
+    - "echo finished A0 submission checks"
