@@ -5,5 +5,5 @@ app_name = 'eatatdcu'
 
 urlpatterns = [
    path('',views.index,name='index'),
-   path('restaurants/',views.restaurants,name='restaurants'),
+   path('restaurants',views.restaurants,name='restaurants'),
 ]
