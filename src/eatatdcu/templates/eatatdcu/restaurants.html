@@ -1,2 +1,9 @@
-<p>No restaurants found</p>
+{% if error %}
+   <p>{{error}}</p>
+{% else %}
 
+<h1> Restaurants </h1>
+{% for r in DCU %}
+<li>{{r.name}}</li>
+{% endfor %}
+{% endif%}
