@@ -5,7 +5,6 @@
    {% if restaurants %}
       {% for r in restaurants %}
          <li>{{ r.name }}, {{ r.location }}
-	 <strong>Opening hours:</strong>{{ r.opening_hours }} - {{ r.closing_hours }}
 	 </li>
       {% endfor %}
    {% else %}
