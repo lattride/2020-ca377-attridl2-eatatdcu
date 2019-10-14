@@ -1,1 +1,14 @@
-No restaurants found
+{% if error %}
+   {{ error }}
+{% else %}
+   <h3>Restaurants</h3>
+   {% if restaurants %}
+      {% for r in restaurants %}
+         <li>{{ r.name }}, {{ r.location }}
+	 </li>
+      {% endfor %}
+   {% else %}
+      No restaurants found
+   {% endif %}
+{% endif %}
+
