@@ -24,3 +24,10 @@ def restaurants(request):
       context = {'error':'No such campus'}
 
    return render(request,'eatatdcu/restaurants.html',context)
+
+def specials(request,restaurant):
+    webservice_url = 'http://jfoster.pythonanywhere.com/specials/'+restaurant
+
+    # call the web service to get the daily special for "restaurant"
+
+    # pass the information returned by the web service into the "specials.html" template using render function
