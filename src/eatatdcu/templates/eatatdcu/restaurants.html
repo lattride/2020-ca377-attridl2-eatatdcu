@@ -1,14 +1,5 @@
 {% if error %}
-   <p>{{error}}</p>
-{% else %}
-
-<h1> Restaurants </h1>
-{% for r in DCU %}
-<li>{{r.name}}</li>
-{% endfor %}
-{% endif%}
-
-   {{ error }}
+   {{error}}
 {% else %}
    <h3>Restaurants</h3>
    {% if restaurants %}

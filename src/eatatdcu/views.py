@@ -1,26 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Restaurant,Campus
+import json, requests
 
 def index(request):
    context = {}
    return render(request,'eatatdcu/index.html',context)
 
 def restaurants(request):
-   campus_name = request.GET.get('campus').lower()
-   try:
-      campus = Campus.objects.get(name=campus_name)
-      restaurants = Restaurant.objects.filter(campus_id=campus)
-      if len(restaurants) == 0:
-         context = {'error':'No restaurants found'}
-      else:
-         context = {'DCU':restaurants}
-   except Campus.DoesNotExist:
-      context = {'error':'No such campus'}
-      return render(request, 'eatatdcu/restaurants.html',context)
-
-
-   # get the campus name from the request
    campus_name = request.GET.get('campus').lower()
 
    try:
@@ -38,7 +25,10 @@ def restaurants(request):
 
 def specials(request,restaurant):
     webservice_url = 'http://jfoster.pythonanywhere.com/specials/'+restaurant
-
+    spec = requests.get(url=webservice_url)
+    data = spec.json()
+    context = {'daily_special':data}
+    
+    return render(request,'eatatdcu/specials.html',context)
     # call the web service to get the daily special for "restaurant"
-
     # pass the information returned by the web service into the "specials.html" template using render function
