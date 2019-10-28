@@ -1,0 +1,7 @@
+{% if error_msg %}
+   <b>An error has occurred</b>: {{ error_msg }}
+{% else %}
+   <b>{{restaurant_name }}</b><br>
+   Daily special:{{ daily_special }} <br>
+   ({{ date }})
+{% endif %}

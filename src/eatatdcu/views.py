@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Restaurant,Campus
+import json,requests
 
 def index(request):
    context = {}
@@ -29,5 +30,8 @@ def specials(request,restaurant):
     webservice_url = 'http://jfoster.pythonanywhere.com/specials/'+restaurant
 
     # call the web service to get the daily special for "restaurant"
+    real_time_info = requests.get(webservice_url).json()
 
     # pass the information returned by the web service into the "specials.html" template using render function
+    return render(request,'eatatdcu/specials.html',real_time_info)
+
