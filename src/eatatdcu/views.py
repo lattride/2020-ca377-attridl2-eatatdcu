@@ -31,4 +31,9 @@ def specials(request,restaurant):
     
     return render(request,'eatatdcu/specials.html',context)
     # call the web service to get the daily special for "restaurant"
+
+    real_time_info = requests.get(webservice_url).json()
+
     # pass the information returned by the web service into the "specials.html" template using render function
+    return render(request,'eatatdcu/specials.html',real_time_info)
+
