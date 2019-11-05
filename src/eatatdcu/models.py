@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import time
 
 class Campus(models.Model):
    campus_id = models.IntegerField(primary_key=True)
@@ -15,3 +16,10 @@ class Restaurant(models.Model):
    opening_hours = models.TimeField()
    closing_hours = models.TimeField()
    capacity = models.IntegerField()
+   staff_only = models.BooleanField(default=False)
+   open_weekend = models.BooleanField(default=False)
+   opening_hours_weekend = models.TimeField(default='00:00')
+   closing_hours_weekend = models.TimeField(default='00:00')
+
+
+
